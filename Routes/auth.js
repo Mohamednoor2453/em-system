@@ -84,7 +84,7 @@ router.post('/login', async (req, res) => {
         // Log the user role to confirm it's set correctly
         if (req.session.user.role === 'admin') {
             console.log('Admin logged in:', req.session.user.email);
-            return res.status(200).redirect('/admin');  // Ensure admin page redirection
+            return res.status(200).redirect('/hr');  // Ensure admin page redirection
         } else {
             console.log('User logged in:', req.session.user.email);
             return res.status(200).redirect('/');  // Default user redirection

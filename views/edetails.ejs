@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= employee.name %> | Employee Details</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1><%= employee.name %></h1>
+    <p>Gender: $<%= employee.gender %></p>
+    <p>Salary: <%= employee.salary %></p>
+    <p>Department: <%= employee.department %></p>
+
+ <div class="btns">
+    <div class="del-btn">
+        <a class="delete" data-doc="<%= employee._id %>">Delete Product</a>
+    </div>
+
+    <div class="update-btn">
+        <a href="/admin/updateEmployee/<%= employee._id %>" class="update">Update Product</a>
+    </div>
+</div>
+    
+    
+    <a href="/admin/admin/addedEmployees">Back to All Employees</a>
+
+    <script>
+        const trash = document.querySelector('.delete')
+
+        trash.addEventListener('click', (e) => {
+            const endpoint = `/admin/admin/deletingEmployee/${trash.dataset.doc}`;
+
+
+            fetch(endpoint, {
+                method: 'DELETE'
+            })
+            .then(response => {
+                if (response.ok) {
+                    window.location.href = '/admin/admin/addedEmployees'; // Redirect to the task list after deletion
+                } else {
+                    console.error('Failed to delete the task', response.message);
+                }
+            })
+            .catch(err => console.error(err));
+        });
+            
+        
+            
+    </script>
+</body>
+</html>

@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 const ejs = require('ejs')
 
 
+
 const path = require('path');
 const mongoose = require('mongoose');
 const MongoStore = require('connect-mongo');
@@ -55,7 +56,7 @@ const adminRouter = require('./Routes/admin.js')
 const isAuthenticated = require('./middleware/authMiddleware.js');
 
 // Middleware for serving static files and parsing body data
-app.use(methodOverride('_method')); 
+app.use(methodOverride('_method'));
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -94,7 +95,7 @@ app.use((req, res) => {
   });
 
 // Start the server
-const port = process.env.PORT || 3000; // Provide a default port if `process.env.PORT` is undefined
+const port = process.env.PORT || 3000; // Provide a default port if process.env.PORT is undefined
 
 
 app.listen(port, () => {

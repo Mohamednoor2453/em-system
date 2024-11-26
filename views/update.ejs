@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Product</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>Update Product</h1>
+    <form action="/admin/updateEmployee/<%= employee._id %>?_method=PUT" method="POST" enctype="multipart/form-data"></form>
+
+        
+        <label for="name">Product Name:</label>
+        <input type="text" id="name" name="name" value="<%= employee.name %>" required><br>
+
+        <!-- gender -->
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="male" <%= employee.gender === "male" ? "selected" : "" %>>Male</option>
+            <option value="female" <%= employee.gender === "female" ? "selected" : "" %>>Female</option>
+            <option value="others" <%= employee.gender === "others" ? "selected" : "" %>>Other</option>
+            
+        </select><br>
+
+        <!-- Price -->
+        <label for="salary">Salary (in Ksh):</label>
+            <input type="number" id="salary" name="salary" step="0.01" value="<%= employee.salary %>" required><br>
+
+       
+
+            <label for="department">Department:</label>
+            <select id="department" name="department" required>
+                <option value="finance" <%= employee.gender === "finance" ? "selected" : "" %>>Finance</option>
+                <option value="it" <%= employee.gender === "it" ? "selected" : "" %>>IT</option>
+                <option value="records" <%= employee.gender === "records" ? "selected" : "" %>>Records</option>
+                <!-- Add other categories as needed -->
+            </select><br>
+        
+
+        
+
+        <!-- Submit Button -->
+        <button type="submit">Update Product</button>
+    </form>
+
+    <a href="/admin/admin/addedEmployees">Back to All Products</a>
+</body>
+</html>
+
+</body>
+</html>
