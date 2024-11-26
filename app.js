@@ -40,7 +40,7 @@ app.use((req, res, next) => {
     res.locals.error = req.flash('error');
     next();
 });
-const isAuthenticated = require('./middleware/authMiddleware.js');
+
 
 
 
@@ -48,10 +48,11 @@ const isAuthenticated = require('./middleware/authMiddleware.js');
 // Import routes
 const authRouter = require('./Routes/auth.js')
 const routesRouter = require('./Routes/routes.js');
+const adminRouter = require('./Routes/admin.js')
 
 
 //authentication middleware
-// const isAuthenticated = require('./middleware/authMiddleware.js');
+const isAuthenticated = require('./middleware/authMiddleware.js');
 
 // Middleware for serving static files and parsing body data
 app.use(methodOverride('_method')); 
@@ -70,7 +71,7 @@ app.set('view engine','ejs')
 // Use routes
 app.use('/auth', authRouter)
 app.use('/', routesRouter);
-
+app.use('/admin', adminRouter);
 
 
 // Database connection
