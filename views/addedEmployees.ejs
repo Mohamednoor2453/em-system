@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management | <%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.querySelector(".sidebar");
+            sidebar.classList.toggle("active");
+        }
+    </script>
+</head>
+<body>
+   
+
+    <!-- Page Title -->
+    <h1>Employees</h1>
+
+    <!-- Employee List -->
+    <div class="employee-list">
+        <% if (employees && employees.length) { %>
+            <% employees.forEach(employee => { %>
+                <div class="employee-item">
+                    <!-- Display employee name -->
+                    <a href="/admin/addEmployees/<%= employee._id %>">
+                        <h3><%= employee.name %></h3>
+                    </a>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <p>No employees found.</p>
+        <% } %>
+    </div>
+</body>
+</html>

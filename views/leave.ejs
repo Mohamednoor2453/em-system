@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Request</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <header class="bg-blue-600 text-white py-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <h1 class="text-2xl font-bold">Leave Request</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="/employee/dashboard" class="hover:text-gray-300">Dashboard</a></li>
+                    <li><a href="/employee/logout" class="hover:text-gray-300">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Leave Request Form -->
+    <main class="container mx-auto mt-8 px-4">
+        <h2 class="text-xl font-semibold mb-6">Request a Leave</h2>
+        <form action="/employee/leaves" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8">
+            
+            <!-- Leave Type -->
+            <div class="mb-4">
+                <label for="leaveType" class="block text-gray-700 font-semibold mb-2">Type of Leave</label>
+                <select id="leaveType" name="leaveType" class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    <option value="">Select Leave Type</option>
+                    <option value="Sick Leave">Sick Leave</option>
+                    <option value="Casual Leave">Casual Leave</option>
+                    <option value="Maternity Leave">Maternity Leave</option>
+                    <option value="Paternity Leave">Paternity Leave</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <!-- Start Date -->
+            <div class="mb-4">
+                <label for="startDate" class="block text-gray-700 font-semibold mb-2">Start Date</label>
+                <input type="date" id="startDate" name="startDate" class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+            </div>
+
+            <!-- End Date -->
+            <div class="mb-4">
+                <label for="endDate" class="block text-gray-700 font-semibold mb-2">End Date</label>
+                <input type="date" id="endDate" name="endDate" class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+            </div>
+
+            <!-- Reason -->
+            <div class="mb-4">
+                <label for="reason" class="block text-gray-700 font-semibold mb-2">Reason</label>
+                <textarea id="reason" name="reason" rows="4" class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Provide a reason for the leave" required></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="flex items-center justify-between">
+                <button type="submit" class="bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline hover:bg-blue-500">
+                    Submit Request
+                </button>
+            </div>
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-4 mt-12">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Employee Management System. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
