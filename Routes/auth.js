@@ -87,7 +87,7 @@ router.post('/login', async (req, res) => {
             return res.status(200).redirect('/hr');  // Ensure admin page redirection
         } else {
             console.log('User logged in:', req.session.user.email);
-            return res.status(200).redirect('/');  // Default user redirection
+            return res.status(200).redirect('/employee');  // Default user redirection
         }
     } catch (error) {
         res.status(500).json({ error: error.message });

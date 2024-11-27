@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-blue-600 text-white py-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <h1 class="text-2xl font-bold">Employee Profile</h1>
+        </div>
+    </header>
+    <main class="container mx-auto mt-8 px-4">
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-xl font-semibold mb-4"><%= employee.name %></h2>
+            <p><strong>Gender:</strong> <%= employee.gender %></p>
+            <p><strong>Salary:</strong> $<%= employee.salary %></p>
+            <p><strong>Department:</strong> <%= employee.department %></p>
+        </div>
+    </main>
+    <footer class="bg-gray-800 text-white py-4 mt-12">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Employee Management System. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

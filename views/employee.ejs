@@ -13,7 +13,6 @@
     <header class="bg-blue-600 text-white py-4 shadow-md">
         <div class="container mx-auto flex justify-between items-center px-4">
             <h1 class="text-2xl font-bold">Welcome,</h1>
-           
         </div>
     </header>
 
@@ -22,21 +21,18 @@
         <h2 class="text-xl font-semibold mb-6">Dashboard</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
-
-
-            <!-- Profile -->
+            <!-- Loop through employees to display their profile button -->
+            <% employees.forEach(employee => { %>
             <div class="bg-white rounded-lg shadow-md p-6">
-                <h3 class="text-lg font-semibold text-blue-600 mb-4">My Profile</h3>
+                <h3 class="text-lg font-semibold text-blue-600 mb-4"><%= employee.name %></h3>
                 <p class="text-gray-700">View personal details.</p>
-                <a href="/employee/profile" class="inline-block mt-4 px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-500">Go to Profile</a>
+                <a href="/employee/profile/<%= employee._id %>" 
+                   class="inline-block mt-4 px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-500">
+                   Go to Profile
+                </a>
             </div>
-      
-<!-- Leave Requests -->
-<div class="bg-white rounded-lg shadow-md p-6">
-    <h3 class="text-lg font-semibold text-blue-600 mb-4">Leave Requests</h3>
-    <p class="text-gray-700">Request for leave.</p>
-    <a href="/leaves" class="inline-block mt-4 px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-500">Request</a>
-</div>    </div>
+            <% }); %>
+
         </div>
     </main>
 

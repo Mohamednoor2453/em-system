@@ -50,7 +50,7 @@ app.use((req, res, next) => {
 const authRouter = require('./Routes/auth.js')
 const routesRouter = require('./Routes/routes.js');
 const adminRouter = require('./Routes/admin.js')
-
+const employeeRouter = require('./Routes/employee.js')
 
 //authentication middleware
 const isAuthenticated = require('./middleware/authMiddleware.js');
@@ -73,6 +73,7 @@ app.set('view engine','ejs')
 app.use('/auth', authRouter)
 app.use('/', routesRouter);
 app.use('/admin', adminRouter);
+app.use('/employee', employeeRouter);
 
 
 // Database connection
